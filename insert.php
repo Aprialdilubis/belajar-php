@@ -13,22 +13,23 @@
         $con = mysqli_connect("localhost","root","","fakultas");
 
         // 2. Check connection
-        if (mysqli_connect_errno()) {
+        if (mysqli_connect_errno()){
             echo "Koneksi gagal" . mysqli_connect_error();
-            exit();
         }else{
-            echo 'Koneksi berhasil';
+            echo "Koneksi berhasil";
         }
-        // 3. buat query insert dan jalankan
+        // Buat sql query untuk insert ke databse
+        // Buat query insert dan dijalankan
         $sql = "insert into mahasiswa (id_jurusan, nim, nama, jenis_kelamin, tempat_lahir, tanggal_lahir, alamat)
-        values ($id_jurusan,'$nim', '$nama', '$gender', '$tpt_lahir', '$tgl_lahir', '$alamat')";
-        
-        if (mysqli_query($con, $sql)) {
+                values ($id_jurusan,'$nim', '$nama', '$gender', '$tpt_lahir', '$tgl_lahir', '$alamat')";
+
+        // Jalankan query
+        if (mysqli_query($con, $sql)){
             echo "Data berhasil ditambah";
-         } else {
-            echo "Ada eror: " .$sql . "<br>"  . mysqli_error();
+        } else {
+            echo "Ada eror". mysqli_error();
         }
-        //4. tutup koneksi
+          
         mysqli_close($con);
     }
 ?>

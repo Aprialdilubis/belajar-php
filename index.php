@@ -38,21 +38,15 @@ mysqli_close($con);
 </head>
 <body>
     <h1>Data Mahasiswa</h1>
-    <a href="insert.php">Tambah Data</a>
     <table border="1" style="width: 100%;">
         <tr>
             <th>NIM</th>
             <th>Nama</th>
-            <th>Action</th>
         </tr>
         <?php foreach ($mahasiswa as $row): ?>
         <tr>
             <td><?= $row['nim'] ?></td>
             <td><?= $row['nama'] ?></td>
-            <td>
-                <a href="update.php?id=<?= $row['id'] ?>" >Edit</a> | 
-                <a href="delete.php?id=<?= $row['id'] ?>" >Delete</a>
-            </td>
         </tr>
         
         <?php endforeach; ?>
