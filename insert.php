@@ -10,13 +10,13 @@
         $alamat = $_POST['alamat'];
 
         // 1. Buat koneksi dengan MySQL
-        $con = mysqli_connect("localhost","root","","fakultas");
+        $con = mysqli_connect("localhost","root","","seal_fakultas");
 
         // 2. Check connection
         if (mysqli_connect_errno()){
             echo "Koneksi gagal" . mysqli_connect_error();
         }else{
-            echo "Koneksi berhasil";
+            echo 'Koneksi berhasil';
         }
         // Buat sql query untuk insert ke databse
         // Buat query insert dan dijalankan
